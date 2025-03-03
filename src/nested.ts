@@ -180,7 +180,10 @@ export function addNewQuestion(
             options: [...question.options],
         }),
     );
-    let addedQuestions = [...newQuestions, makeBlankQuestion(id, name, type)];
+    let addedQuestions: Question[] = [
+        ...newQuestions,
+        makeBlankQuestion(id, name, type),
+    ];
     return addedQuestions;
 }
 
