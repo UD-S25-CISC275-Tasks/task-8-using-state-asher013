@@ -174,17 +174,16 @@ export function addNewQuestion(
     name: string,
     type: QuestionType,
 ): Question[] {
-    let newQuestions = questions.map(
-        (question: Question): Question => ({
-            ...question,
-            options: [...question.options],
-        }),
-    );
-    let addedQuestions: Question[] = [
-        ...newQuestions,
+    let newQuestions = [
+        ...questions.map(
+            (question: Question): Question => ({
+                ...question,
+                options: [...question.options],
+            }),
+        ),
         makeBlankQuestion(id, name, type),
     ];
-    return addedQuestions;
+    return newQuestions;
 }
 
 /***
