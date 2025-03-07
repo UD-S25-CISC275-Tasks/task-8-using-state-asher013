@@ -174,7 +174,7 @@ export function addNewQuestion(
     name: string,
     type: QuestionType,
 ): Question[] {
-    let newQuestions: Question[] = [
+    const newQuestions: Question[] = [
         ...questions,
         makeBlankQuestion(id, name, type),
     ];
